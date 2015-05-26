@@ -1,5 +1,19 @@
 import java.util.HashMap;
-
+/**
+* SumOfTwoNums
+* Given an array of integers, determine whether or not 
+* there exist two elements in the array (at different positions) 
+* whose sum is equal to some target value.
+*
+* Examples:
+* [5, 4, 2, 4], 8 --> true
+* [5, 1, 2, 4], 8 --> false
+*
+* Classic interview/algorithm question I received during
+* an interview process.
+*
+* Two quick solutions given below
+**/
 class SumOfTwoNums{
 
    public static void main(String[] args){
