@@ -26,6 +26,9 @@ class SumOfTwoNums{
  
      System.out.println(twoNumsMakeSumFast(nums,sum)); 
      System.out.println(twoNumsMakeSumFast(nums,sum2));
+
+//     System.out.println(twoNumsMakeSumFastBools(nums,sum)); 
+//     System.out.println(twoNumsMakeSumFastBools(nums,sum2));
      
    }
 
@@ -55,4 +58,21 @@ class SumOfTwoNums{
       }
       return false;
    }
+
+  /**
+  * O(n)
+  **/
+  private static boolean twoNumsMakeSumFastBools(int[] arrayOfIntegers, int sum){
+     boolean[] sumsTo = new boolean[1000];
+     int tempNum;
+     for(int i = 0; i < arrayOfIntegers.length; i++){
+        tempNum = sum - arrayOfIntegers[i];
+        if(sumsTo[tempNum] == true){
+           return true;
+        }
+        
+        sumsTo[tempNum] = true;
+     }
+     return false;
+  }
 }
