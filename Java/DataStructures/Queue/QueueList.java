@@ -19,6 +19,7 @@ class QueueList<Item> implements QueueInterface<Item> {
       if(head == null) {
         head = new Node();
         head.item = item; 
+        count++;
         return;
       }
 
