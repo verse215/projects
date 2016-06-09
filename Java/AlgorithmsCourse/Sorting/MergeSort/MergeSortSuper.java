@@ -1,4 +1,4 @@
-class MergeSort{
+public class MergeSortSuper{
 
    // array of values
    private int[] values;
@@ -9,7 +9,22 @@ class MergeSort{
       this.temp = new int[values.length];
       sort(0,values.length-1);
    } 
-   
+  
+   /**
+   * Used to sort smaller arrays during the recursion
+   **/ 
+   private void insertionSort(int begin, int mid, int end) {
+      for(int i = begin; i < end; i++) {
+         for(int j = i; j > begin; j--) {
+            if(values[j] < values[j-1]){
+               int tmp = values[j];
+               values[j] = values[j-1];
+               values[j-1] = tmp;
+            } else { break;}
+         }
+      }
+   }
+ 
    public void sort(int begin, int end){
       if( begin < end){
          int mid = begin + (end - begin)/2;
@@ -19,7 +34,16 @@ class MergeSort{
       }
    }
 
+   /**
+   * Use insertion sort for smaller arrays
+   * as it is more effiecent
+   **/
    private void merge(int begin, int mid, int end){
+      if(end - begin < 15){
+         insertionSort(begin,mid,end);
+         return;
+      }
+
       for(int i = begin; i <= end; i++){
          temp[i] = values[i];
       }

@@ -34,4 +34,16 @@ public class InsertionSort{
              givenArray[j + 1] = key;
       }
    }
+
+   public static void insertionSort2(int[] values) {
+      for(int i =  1; i < values.length; i++) {
+         for(int j = i; j > 0; j--) {
+            if(values[j] < values[j - 1]){
+               int tmp = values[j];
+               values[j] = values[j - 1];
+               values[j - 1] = tmp;
+            } else { break;}
+         }
+      }
+   }
 }

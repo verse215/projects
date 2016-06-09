@@ -31,4 +31,10 @@ public class MergeSortTest {
       MergeSort sort = new MergeSort();
       sort.sort(toSort);
    }
+   
+   @Test
+   public void test2() {
+      MergeSortSuper sort = new MergeSortSuper();
+      sort.sort(toSort);
+   }
 }
