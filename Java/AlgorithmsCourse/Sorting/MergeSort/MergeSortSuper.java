@@ -1,3 +1,7 @@
+/**
+* Mergesort with speedup by using insertion sort
+* for 'small' arrays.
+**/
 public class MergeSortSuper{
 
    // array of values
@@ -13,7 +17,7 @@ public class MergeSortSuper{
    /**
    * Used to sort smaller arrays during the recursion
    **/ 
-   private void insertionSort(int begin, int mid, int end) {
+   private void insertionSort(int begin, int end) {
       for(int i = begin; i < end; i++) {
          for(int j = i; j > begin; j--) {
             if(values[j] < values[j-1]){
@@ -26,7 +30,11 @@ public class MergeSortSuper{
    }
  
    public void sort(int begin, int end){
-      if( begin < end){
+     if(end - begin < 15){
+         insertionSort(begin,end);
+         return;
+     }
+     if( begin < end){
          int mid = begin + (end - begin)/2;
          sort(begin,mid);
          sort(mid + 1,end);
@@ -39,10 +47,6 @@ public class MergeSortSuper{
    * as it is more effiecent
    **/
    private void merge(int begin, int mid, int end){
-      if(end - begin < 15){
-         insertionSort(begin,mid,end);
-         return;
-      }
 
       for(int i = begin; i <= end; i++){
          temp[i] = values[i];
