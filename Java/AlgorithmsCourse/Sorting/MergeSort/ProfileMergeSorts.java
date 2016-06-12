@@ -23,15 +23,29 @@ public class ProfileMergeSorts {
          msOut = new PrintWriter("ms.txt");
       } catch(Exception e){}
 
+      int sum1 = 0;
+      int sum2 = 0;
+
       for(int i = 0; i < 10; i++) {
-         mssOut.println(instance.profileMergeSortSuper());
+         long tempTime = instance.profileMergeSortSuper();
+         sum1 += tempTime;
+         mssOut.println(tempTime);
       }
  
   
       for(int i = 0; i < 10; i++) {
-         msOut.println(instance.profileMergeSort());
+         long tempTime = instance.profileMergeSort();
+         sum2 += tempTime;
+         msOut.println(tempTime);
       }
-   
+  
+      int avg1 = sum1 / 10;
+      int avg2 = sum2 / 10;
+      mssOut.print("Avg run time in milliseconds: ");
+      mssOut.println(avg1);
+      msOut.print("Avg run time in milliseconds: "); 
+      msOut.println(avg2); 
+
       mssOut.close();
       msOut.close();
    }
