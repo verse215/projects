@@ -1,0 +1,1 @@
+Imagine that your attempting to calculate the max profit you would have made on a particular stock the day before. If your givin all of the prices throughtout the day determine the optimal time to buy and sell the stock.

@@ -1,27 +1,26 @@
+import java.io.*;
+import java.util.Scanner;
+
+/**
+* This class will use the mergesort algorithm
+* to determine the number of inversions in a given
+* array.
+**/
 public class InversionsFast {
 
-   public int inversions;
+   public long inversions;
    private int a[];
    private int aux[];
-
-   public static void main(String[] args) {
-      int[] a = {9,8,7,6,5,4};
-      InversionsFast inv = new InversionsFast(a);
-      inv.countInversions();
-      for(int i : a) {
-         System.out.println(i);
-      }
-     System.out.println(inv.inversions); 
-   }
 
    public InversionsFast(int[] a) {
       this.a = a;
       aux = new int[a.length];
    }
 
-   public void countInversions() {
+   public long countInversions() {
       inversions = 0;
       sort(0, a.length - 1);
+      return inversions;
    }
 
    private void sort(int start, int end) {

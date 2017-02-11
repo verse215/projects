@@ -1,3 +1,8 @@
+/**
+* The class counts inversions in a given int array.
+* It's running time in On^2 so its not resonable 
+* for large arrays
+**/
 public class InversionsSlow {
 
    private int[] a;
@@ -15,10 +20,5 @@ public class InversionsSlow {
       }
 
       return inversions;
-   }
-
-   public static void main(String[] args) {
-      InversionsSlow inv = new InversionsSlow(new int[]{9,8,7,6,5,4});
-      System.out.println(inv.countInversions());
    }
 }

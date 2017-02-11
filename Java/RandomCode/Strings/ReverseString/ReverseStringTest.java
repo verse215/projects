@@ -14,4 +14,9 @@ public class ReverseStringTest {
    public void test1(){
       assertEquals(reverse.reverseString("Tommy"),"ymmoT");
    }
+   
+   @Test
+   public void test2(){
+      assertEquals(reverse.reverseString2("Tommy"),"ymmoT");
+   }
 }
